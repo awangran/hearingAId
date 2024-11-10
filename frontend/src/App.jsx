@@ -5,14 +5,14 @@ import Dashboard from "./routes/Dashboard";
 import Generate from "./routes/Generate";
 import Login from "./routes/Login";
 import Root from "./routes/Root";
-import Signin from "./routes/Signin";
+import Signup from "./routes/Signup";
 
 export default function App() {
   return (
     <>
     <Routes>
       <Route path='/' element={<Root />} />
-      <Route path='/signin' element={<Signin />} />
+      <Route path='/signup' element={<Signup />} />
       <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/generate' element={<Generate />} />

@@ -14,10 +14,10 @@ export function Login() {
     <section className="grid text-center h-screen items-center p-8">
       <div>
         <Typography variant="h3" color="blue-gray" className="mb-2">
-          Log In
+          Create account
         </Typography>
         <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
-          Enter your email and password to log in
+          Enter your email and password to register.
         </Typography>
         <form action="#" className="mx-auto max-w-[24rem] text-left">
           <div className="mb-6">
@@ -71,7 +71,7 @@ export function Login() {
             />
           </div>
           <Button color="gray" size="lg" className="mt-6" fullWidth>
-            log in
+            sign in
           </Button>
           <div className="!mt-4 flex justify-end">
             <Typography
@@ -97,9 +97,7 @@ export function Login() {
               className="h-6 w-6"
             />{" "}
             sign in with google
-          </Button>
-        */}
-        
+          </Button>*/}
           <Typography
             variant="small"
             color="gray"
@@ -111,7 +109,9 @@ export function Login() {
             </a>
           </Typography>
         </form>
+      
       </div>
+     
     </section>
     </>
   );

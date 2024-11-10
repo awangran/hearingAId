@@ -41,7 +41,7 @@ export default function NavbarComp() {
           />
         </svg>
  
-        <a href="#team" className="flex items-center">
+        <a href="/#team" className="flex items-center">
           Nosotros
         </a>
       </Typography>
@@ -65,7 +65,7 @@ export default function NavbarComp() {
             fill="#90A4AE"
           />
         </svg>
-        <a href="#como" className="flex items-center">
+        <a href="/#como" className="flex items-center">
           Cómo Usar
         </a>
       </Typography>
@@ -141,8 +141,8 @@ export default function NavbarComp() {
             size="sm"
             className="hidden lg:inline-block"
           >
-            <Link to="/signin">
-            <span>Sign in</span>
+            <Link to="/signup">
+            <span>Sign up</span>
             </Link>
           </Button>
         </div>
