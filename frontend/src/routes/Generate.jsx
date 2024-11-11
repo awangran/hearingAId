@@ -6,7 +6,7 @@ function Generate() {
   return (
     <>
     <Navbar2 />
-    <div className="mx-32 my-12 lg:text-left" >
+    <div className="mx-32 my-16 lg:text-left " >
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
             Generar
           </p>
