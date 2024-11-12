@@ -67,22 +67,20 @@ import {
       <section className="min-h-screen mt-12 py-8 px-8 lg:py-12">
       <div className="container mx-auto">
         <div className="mb-16 text-center lg:mb-28">
-      
           <Typography
             variant="h1"
             color="blue-gray"
             className="my-2 !text-2xl lg:!text-4xl"
           >
-            Nuestro Equipo: Mas allá de 
-            Hearing-AId
+            Nuestro Equipo. ¿Quiénes Somos?
           </Typography>
           <Typography
             variant="lead"
             className="mx-auto w-full !text-gray-500 max-w-4xl"
           >
-            From visionary leadership to creative talent, and technical wizards, 
-            each team member plays a pivotal role in delivering the exceptional 
-            service and innovative solutions.
+            Somos un grupo de estudiantes comprometidos con la inclusión y la diversidad en el aprendizaje.
+             Nuestro objetivo es crear la tecnología que independice y ayude a las personas que pueden 
+             verse afectadas por sus discapacidades.
           </Typography>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
