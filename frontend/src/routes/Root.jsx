@@ -39,36 +39,39 @@ function Root() {
     <>
     <NavbarComp />
     
-     {/* Empieza Header con botones start*/} 
-    <div className="bg-white">
+     {/* Este es el boton de se vienen cositas pero no se si borrarlo o que poner*/} 
+     <div className="bg-white">
       <div className="relative isolate px-6 pt-7 lg:px-8">
-        <div className="mx-auto max-w-2xl py-12 sm:py-48 lg:py-20">
+        <div className="mx-auto max-w-2xl py-4 sm:py-16 lg:py-10"> {/* Ajusta los valores de py */}
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{' '}
-              <a href="#" className="font-semibold text-indigo-600">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-          <div className="text-center">
+              No se que poner acá{' '}
+          <a href="#" className="font-semibold text-indigo-600">
+            <span aria-hidden="true" className="absolute inset-0" />
+            Ver <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+          <div className="text-center ">
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-              Virtual speech-to-text notebook
+              Cuaderno virtual 
+              speech-to-text
             </h1>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl max-w-3xl mx-auto">
+            HearingAId es un cuaderno virtual que facilitará el aprendizaje a personas con limitaciones auditivas. Con su tecnología de 
+             "Speech-To-Text", HearingAId transcribe en tiempo real la clase que sea, mostrando subtítulos
+              en tiempo real, transcribiéndolos después y generando un resumen automático personalizado de 
+              cada clase.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Get started
+                Registrate
               </a>
               <a href="#" className="text-sm/6 font-semibold text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
+                Más información <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -95,13 +98,12 @@ function Root() {
     {/* Quienes somos start*/} 
     <div className="mx-auto max-w-7xl px-6 lg:px-8" id="como">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-          <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            Everything you need to deploy your app
+          <h2 className="mt-10 text-base/7 font-semibold text-indigo-600">Uso</h2>
+          <p className="mt-10 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+            Modo de uso
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            Como usar
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
