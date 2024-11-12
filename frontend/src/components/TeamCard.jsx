@@ -37,28 +37,28 @@ import {
   const members = [
     {
       img: `https://www.material-tailwind.com/img/avatar1.jpg`,
-      name: "Ryan Samuel",
-      title: "Co-Founder",
+      name: "Ashlee Yin",
+      title: "",
     },
     {
       img: `https://www.material-tailwind.com/img/avatar2.jpg`,
-      name: "Ryan Samuel",
-      title: "Co-Founder",
+      name: "Pau Suso",
+      title: "",
     },
     {
       img: `https://www.material-tailwind.com/img/avatar5.jpg`,
-      name: "Nora Hazel",
-      title: "UI/UX Designer",
+      name: "David Almanza",
+      title: "",
     },
     {
       img: `https://www.material-tailwind.com/img/avatar4.jpg`,
-      name: "Otto Gonzalez",
-      title: "Marketing Specialist",
+      name: "Daniel Rincon",
+      title: "",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar6.jpg`,
-      name: "Emma Roberts",
-      title: "UI Designer",
+      img: `https://i.imgur.com/tQGNvxy.jpeg`,
+      name: "Juan David Echeverry",
+      title: "",
     }
   ];
   
@@ -73,7 +73,8 @@ import {
             color="blue-gray"
             className="my-2 !text-2xl lg:!text-4xl"
           >
-            Behind the Success: Our Dedicated Team
+            Nuestro Equipo: Mas allá de 
+            Hearing-AId
           </Typography>
           <Typography
             variant="lead"
