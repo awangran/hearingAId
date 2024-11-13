@@ -3,34 +3,34 @@ import NavbarComp from '../components/NavbarComp'
 import TeamCard from '../components/TeamCard'
 import Footer from '../components/Footer'
 
-import { ArrowPathIcon, CloudArrowUpIcon, CloudIcon, FingerPrintIcon, LockClosedIcon, NoSymbolIcon, NumberedListIcon, ShareIcon, UserCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, CloudIcon, FingerPrintIcon, LockClosedIcon, NoSymbolIcon, NumberedListIcon, ShareIcon, UserCircleIcon, CalendarIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { PlusIcon } from '@heroicons/react/24/solid'
 
 function Root() {
     const features = [
         {
-          name: 'Registrate',
+          name: '1. Registrate',
           description: 
-            'En el panel principal, si neceitas generar una nueva nota selecciona el icono "generar nota".',
+            'Registrate con tu correo electrónico en el que deseas que se guarden tus notas.',
           icon: UserCircleIcon,
         },
         {
-          name: '¡Selecciona la funcionalidad que necesites!',
+          name: '2. Registra tus calendario',
           description:
-            'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-          icon: ShareIcon,
+            'Registra el nombre de cada clase que desees transcribir. Esto para que las notas se guarden respectivamente.',
+          icon: CalendarIcon,
         },
         {
-          name: 'Genera tus notas',
+          name: '3. Genera tus notas',
           description:
-            'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+            'Haz click en el icono "Generar" ubicado en la parte superior de esta pestaña. Recuerda conceder los permisos a la aplicacion para usar tu micrófono. Haz click en el botón "Generar", y cuando haya terminado tu clase click en "Terminar".',
           icon: PlusIcon,
         },
         {
-          name: '¡Organizalas a tu gusto!',
+          name: '4. ¡Organizalas a tu gusto!',
           description:
-            'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+            'Puedes organizar y personalizar el formato en el que se te presentan tus notas. ¡Haz click en "Cards", "Tabla" o "Clses" para explorar cada formato.!',
           icon: NumberedListIcon,
         },
       ]
@@ -98,12 +98,12 @@ function Root() {
     {/* Quienes somos start*/} 
     <div className="mx-auto max-w-7xl px-6 lg:px-8" id="como">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="mt-10 text-base/7 font-semibold text-indigo-600">Uso</h2>
-          <p className="mt-10 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            ¿Cómo utilizar Hearing-AId?
+          <h2 className="mt-10 text-base/5 font-semibold text-indigo-600">Uso</h2>
+          <p className="mt-8 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+            Tu guía rápida para usar la app
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Paso a paso
+            Paso a paso. Transforma el habla en texto de forma simple y eficiente.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
