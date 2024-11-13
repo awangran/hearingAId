@@ -39,7 +39,8 @@ function Generate() {
 
       <div className="my-12 mx-32 flex gap-4 flex justify-center	">
         <Button variant="filled" onClick={()=>SpeechRecognition.startListening({ continuous: true, language: 'es-CO' })}>Empezar</Button>
-        <Button variant="filled" onClick={()=>SpeechRecognition.stopListening}>Terminar</Button>
+        <Button variant="filled" onClick={()=>{SpeechRecognition.stopListening({continuous: false}, console.log(transcript));
+ }}>Terminar</Button>
         <Button variant="filled">Generar</Button>
         <Button variant="outlined">Preguntar</Button>
     </div>
