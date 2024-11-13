@@ -3,34 +3,35 @@ import NavbarComp from '../components/NavbarComp'
 import TeamCard from '../components/TeamCard'
 import Footer from '../components/Footer'
 
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, CloudIcon, FingerPrintIcon, LockClosedIcon, NoSymbolIcon, NumberedListIcon, ShareIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
+import { PlusIcon } from '@heroicons/react/24/solid'
 
 function Root() {
     const features = [
         {
-          name: 'Primer paso',
+          name: 'Registrate',
           description: 
             'En el panel principal, si neceitas generar una nueva nota selecciona el icono "generar nota".',
-          icon: CloudArrowUpIcon,
+          icon: UserCircleIcon,
         },
         {
-          name: 'Segundo paso',
+          name: '¡Selecciona la funcionalidad que necesites!',
           description:
             'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-          icon: LockClosedIcon,
+          icon: ShareIcon,
         },
         {
-          name: 'Tercer paso',
+          name: 'Genera tus notas',
           description:
             'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-          icon: ArrowPathIcon,
+          icon: PlusIcon,
         },
         {
-          name: 'Ultimo paso',
+          name: '¡Organizalas a tu gusto!',
           description:
             'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-          icon: FingerPrintIcon,
+          icon: NumberedListIcon,
         },
       ]
   
@@ -99,10 +100,10 @@ function Root() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="mt-10 text-base/7 font-semibold text-indigo-600">Uso</h2>
           <p className="mt-10 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-            Modo de uso
+            ¿Cómo utilizar Hearing-AId?
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Como usar
+            Paso a paso
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
