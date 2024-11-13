@@ -41,12 +41,12 @@ import {
       title: "ash@haid.com",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar2.jpg`,
+      img: `https://i.imgur.com/dvHdsIQ.png`,
       name: "Pau Suso",
       title: "pau@haid.com",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar5.jpg`,
+      img: `https://i.imgur.com/qI6q8nw.jpeg`,
       name: "David Almanza",
       title: "david@haid.com",
     },
