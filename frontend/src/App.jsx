@@ -6,6 +6,7 @@ import Generate from "./routes/Generate";
 import Login from "./routes/Login";
 import Root from "./routes/Root";
 import Signup from "./routes/Signup";
+import 'regenerator-runtime/runtime';
 
 export default function App() {
   return (
