@@ -41,7 +41,7 @@ import {
       title: "ash@haid.com",
     },
     {
-      img: `https://i.imgur.com/dvHdsIQ.png`,
+      img: `https://i.imgur.com/ZOa7iFo.jpeg`,
       name: "Pau Suso",
       title: "pau@haid.com",
     },
