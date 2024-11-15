@@ -6,6 +6,7 @@ import Generate from "./routes/Generate";
 import Login from "./routes/Login";
 import Root from "./routes/Root";
 import Signup from "./routes/Signup";
+import NotesPage from "./routes/NotesPage";
 import 'regenerator-runtime/runtime';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/generate' element={<Generate />} />
+      <Route path='/notes' element={<NotesPage />} /> 
     </Routes>
     </>
   );
