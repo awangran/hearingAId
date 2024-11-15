@@ -3,10 +3,28 @@ import { useState } from "react";
 import { Typography, Input, Button } from "@material-tailwind/react";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import NavbarComp from "../components/NavbarComp";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
+
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:5555/login',{email,password})
+    .then(res => {
+      console.log(res)
+      if(res.data === "Success") {
+        navigate('/dashboard')
+      }
+    })
+    .catch(err => console.log(err))
+  }
 
   return (
     <>
@@ -19,7 +37,7 @@ export function Login() {
         <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
           Enter your email and password to log in
         </Typography>
-        <form action="#" className="mx-auto max-w-[24rem] text-left">
+        <form onSubmit={handleSubmit} className="mx-auto max-w-[24rem] text-left">
           <div className="mb-6">
             <label htmlFor="email">
               <Typography
@@ -40,6 +58,7 @@ export function Login() {
               labelProps={{
                 className: "hidden",
               }}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-6">
@@ -68,9 +87,10 @@ export function Login() {
                   )}
                 </i>
               }
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button color="gray" size="lg" className="mt-6" fullWidth>
+          <Button color="gray" type="submit" size="lg" className="mt-6" fullWidth>
             log in
           </Button>
           <div className="!mt-4 flex justify-end">
