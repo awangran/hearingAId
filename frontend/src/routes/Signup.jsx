@@ -3,10 +3,27 @@ import { useState } from "react";
 import { Typography, Input, Button } from "@material-tailwind/react";
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import NavbarComp from "../components/NavbarComp";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
+
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const navigate = useNavigate()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:5555/signup',{name,email,password})
+    .then(res => {console.log(res)
+    navigate('/login')
+    })
+    .catch(err => console.log(err))
+  }
 
   return (
     <>
@@ -14,19 +31,41 @@ export function Login() {
     <section className="grid text-center h-screen items-center p-8">
       <div>
         <Typography variant="h3" color="blue-gray" className="mb-2">
-          Create account
+          Crea una cuenta
         </Typography>
         <Typography className="mb-16 text-gray-600 font-normal text-[18px]">
-          Enter your email and password to register.
+          Ingresa un nombre, email y constraseña para registrarte. 
         </Typography>
-        <form action="#" className="mx-auto max-w-[24rem] text-left">
+        <form onSubmit={handleSubmit} className="mx-auto max-w-[24rem] text-left">
+        <div className="mb-6">
+            <label htmlFor="name">
+              <Typography
+                variant="small"
+                className="mb-2 block font-medium text-gray-900"
+              >
+                Nombre
+              </Typography>
+            </label>
+            <Input
+              id="name"
+              color="gray"
+              size="lg"
+              name="name"
+              placeholder=""
+              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+              labelProps={{
+                className: "hidden",
+              }}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div className="mb-6">
             <label htmlFor="email">
               <Typography
                 variant="small"
                 className="mb-2 block font-medium text-gray-900"
               >
-                Your Email
+                Email
               </Typography>
             </label>
             <Input
@@ -40,6 +79,7 @@ export function Login() {
               labelProps={{
                 className: "hidden",
               }}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-6">
@@ -48,11 +88,12 @@ export function Login() {
                 variant="small"
                 className="mb-2 block font-medium text-gray-900"
               >
-                Password
+                Contraseña
               </Typography>
             </label>
             <Input
               size="lg"
+              name="password"
               placeholder="********"
               labelProps={{
                 className: "hidden",
@@ -68,21 +109,14 @@ export function Login() {
                   )}
                 </i>
               }
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button color="gray" size="lg" className="mt-6" fullWidth>
-            sign in
+          <Button color="gray" type="submit" size="lg" className="mt-6" fullWidth>
+            Registrate
           </Button>
           <div className="!mt-4 flex justify-end">
-            <Typography
-              as="a"
-              href="#"
-              color="blue-gray"
-              variant="small"
-              className="font-medium"
-            >
-              Forgot password
-            </Typography>
+      
           </div>
           {/* 
           <Button
@@ -103,9 +137,9 @@ export function Login() {
             color="gray"
             className="!mt-4 text-center font-normal"
           >
-            Not registered?{" "}
-            <a href="#" className="font-medium text-gray-900">
-              Create account
+            ¿Ya tienes cuenta?{" "}
+            <a href="/login" className="font-medium text-gray-900">
+              Log In
             </a>
           </Typography>
         </form>

@@ -36,29 +36,29 @@ import {
   
   const members = [
     {
-      img: `https://www.material-tailwind.com/img/avatar1.jpg`,
+      img: `https://i.imgur.com/fA6WArH.jpeg`,
       name: "Ashlee Yin",
-      title: "",
+      title: "ash@haid.com",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar2.jpg`,
+      img: `https://i.imgur.com/ZOa7iFo.jpeg`,
       name: "Pau Suso",
-      title: "",
+      title: "pau@haid.com",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar5.jpg`,
+      img: `https://i.imgur.com/qI6q8nw.jpeg`,
       name: "David Almanza",
-      title: "",
+      title: "david@haid.com",
     },
     {
-      img: `https://www.material-tailwind.com/img/avatar4.jpg`,
+      img: `https://i.imgur.com/Q4ie8qf.png`,
       name: "Daniel Rincon",
-      title: "",
+      title: "daniel@haid.com",
     },
     {
       img: `https://i.imgur.com/tQGNvxy.jpeg`,
       name: "Juan David Echeverry",
-      title: "",
+      title: "juan@haid.com",
     }
   ];
   
@@ -72,13 +72,13 @@ import {
             color="blue-gray"
             className="my-2 !text-2xl lg:!text-4xl"
           >
-            Nuestro Equipo. ¿Quiénes Somos?
+            Nuestro Equipo: Mas allá de Hearing-AId
           </Typography>
           <Typography
             variant="lead"
             className="mx-auto w-full !text-gray-500 max-w-4xl"
           >
-            Somos un grupo de estudiantes comprometidos con la inclusión y la diversidad en el aprendizaje.
+             Somos un grupo de estudiantes comprometidos con la inclusión y la diversidad en el aprendizaje.
              Nuestro objetivo es crear la tecnología que independice y ayude a las personas que pueden 
              verse afectadas por sus discapacidades.
           </Typography>

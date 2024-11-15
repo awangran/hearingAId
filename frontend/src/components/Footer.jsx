@@ -20,58 +20,54 @@ export default function Footer() {
                 <path
                   d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
               </svg>
-              TW Elements
+              ¿Quieres contribuir al proyecto?
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              Si deseas retroalimentar al equipo, sugerir cambios en la interfaz 
+              o mejorar el servicio que ofrecemos con 'Hearing-AId', 
+              contactanos por cualquiera de los medios plasmados en este pie de página. 
             </p>
           </div>
           {/* <!-- Products section --> */}
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Products
+            
             </h6>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >Angular</a>
+              ></a>
             </p>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >React</a>
+              ></a>
             </p>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >Vue</a>
+              ></a>
             </p>
             <p>
               <a className="text-gray-900 dark:text-neutral-200"
-              >Laravel</a>
+              ></a>
             </p>
           </div>
           {/* <!-- Useful links section --> */}
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Useful links
+              Nuestras Redes Sociales
             </h6>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >Pricing</a>
+              >Twitter: @hearingAId</a>
             </p>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >Settings</a>
+              >Instagram: @hearingAId</a>
             </p>
             <p className="mb-4">
               <a className="text-gray-900 dark:text-neutral-200"
-              >Orders</a>
-            </p>
-            <p>
-              <a className="text-gray-900 dark:text-neutral-200"
-              >Help</a>
+              >Tiktok: @hearingAId</a>
             </p>
           </div>
           {/* <!-- Contact section --> */}
@@ -138,11 +134,11 @@ export default function Footer() {
 
       {/* <!--Copyright section--> */}
       <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
-        <span>© 2023 Copyright:</span>
+        <span>© 2024 Copyright:</span>
         <a
           className="font-semibold text-gray-900 dark:text-neutral-400"
           href="https://tw-elements.com/"
-        >TW Elements</a>
+        >Hearing-AId</a>
       </div>
     </footer>
   );
