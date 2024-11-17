@@ -124,12 +124,17 @@ export default function NavbarComp() {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         
         <Typography
+        
           as="a"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          HearingAId
+          <Link to="/#como"><a href='https://postimg.cc/YvTsPF2g' target='_blank'><img src='https://i.postimg.cc/YvTsPF2g/Hearing-AId-mini-logo.png' border='0' class="w-40 h-auto" alt='Hearing-AId-mini-logo'/></a></Link> 
+          
         </Typography>
+
+        
         <div className="hidden lg:block">{navList}</div>
+        
         <div className="flex items-center gap-x-1">
           <Button variant="text" size="sm" className="hidden lg:inline-block">
           <Link to="/login">

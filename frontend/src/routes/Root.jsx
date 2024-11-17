@@ -16,7 +16,7 @@ function Root() {
           icon: UserCircleIcon,
         },
         {
-          name: '2. Registra tus calendario',
+          name: '2. Registra tu calendario',
           description:
             'Registra el nombre de cada clase que desees transcribir. Esto para que las notas se guarden respectivamente.',
           icon: CalendarIcon,
@@ -30,7 +30,7 @@ function Root() {
         {
           name: '4. ¡Organizalas a tu gusto!',
           description:
-            'Puedes organizar y personalizar el formato en el que se te presentan tus notas. ¡Haz click en "Cards", "Tabla" o "Clses" para explorar cada formato.!',
+            'Puedes organizar y personalizar el formato en el que se te presentan tus notas. ¡Haz click en "Cards", "Tabla" o "Clases" para explorar cada formato.!',
           icon: NumberedListIcon,
         },
       ]
@@ -45,18 +45,20 @@ function Root() {
         <div className="mx-auto max-w-2xl py-4 sm:py-16 lg:py-10"> {/* Ajusta los valores de py */}
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              No se que poner acá{' '}
-          <a href="#" className="font-semibold text-indigo-600">
+              ¿Quienes somos?{' '}
+          <a href="/#team" className="font-semibold text-indigo-600">
             <span aria-hidden="true" className="absolute inset-0" />
             Ver <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </div>
           <div className="text-center ">
+          <a href="https://imgur.com/a/TB4sk1m"><img src="https://i.ibb.co/wC0Y3f1/Loguito-Hearing-Aid.png" alt="Loguito-Hearing-Aid" border="0"class="w-80 h-auto mx-auto"></img></a>
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
               Cuaderno virtual 
               speech-to-text
             </h1>
+            
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl max-w-3xl mx-auto">
               HearingAId es un cuaderno virtual que facilitará el aprendizaje a personas con limitaciones auditivas. Con su tecnología de 
              "Speech-To-Text", HearingAId transcribe en tiempo real la clase que sea, mostrando subtítulos
@@ -65,12 +67,15 @@ function Root() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/signup"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
+                
                 Registrate
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              
+
+              <a href="/#como" className="text-sm/6 font-semibold text-gray-900">
                 Más información <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -103,7 +108,7 @@ function Root() {
             Tu guía rápida para usar la app
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Paso a paso. Transforma el habla en texto de forma simple y eficiente.
+            Transforma el habla en texto de forma simple y eficiente paso por paso:
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
