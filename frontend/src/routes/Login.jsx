@@ -12,6 +12,7 @@ export function Login() {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [sessionID, setSessionID] = useState()
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -20,7 +21,8 @@ export function Login() {
     .then(res => {
       console.log(res)
       if(res.data === "Success") {
-        navigate('/dashboard')
+        setUserId(res.data.userId);
+        navigate('/dashboard', { state: { userId } })
       }
     })
     .catch(err => console.log(err))
