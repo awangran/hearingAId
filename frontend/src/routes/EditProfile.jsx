@@ -17,16 +17,16 @@ function EditProfile() {
     
           {/* Contenido principal */}
           <div className="bg-white min-h-screen py-8">
-            {/* Título de la Página */}
+            
             <div className="text-center mb-6">
               <h2 className="text-3xl font-bold text-gray-800">Editar Perfil</h2>
               <p className="text-gray-600">Actualiza tu información básica</p>
             </div>
     
-            {/* Formulario de Edición */}
+            
             <div className="max-w-2xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md">
               <form>
-                {/* Nombre de Usuario */}
+                
                 <div className="mb-4">
                   <label
                     htmlFor="username"
@@ -42,7 +42,7 @@ function EditProfile() {
                   />
                 </div>
     
-                {/* Nombres */}
+                
                 <div className="mb-4">
                   <label
                     htmlFor="name"
@@ -58,7 +58,7 @@ function EditProfile() {
                   />
                 </div>
     
-                {/* Correo Electrónico */}
+                
                 <div className="mb-4">
                   <label
                     htmlFor="email"
@@ -74,7 +74,7 @@ function EditProfile() {
                   />
                 </div>
     
-                {/* Contraseña */}
+                
                 <div className="mb-4">
                   <label
                     htmlFor="password"
@@ -90,7 +90,7 @@ function EditProfile() {
                   />
                 </div>
     
-                {/* Botón de Guardar */}
+                
                 <div className="text-right">
                   <button
                     type="submit"
