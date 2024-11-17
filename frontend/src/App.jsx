@@ -8,6 +8,7 @@ import Root from "./routes/Root";
 import Signup from "./routes/Signup";
 import NotesPage from "./routes/NotesPage";
 import 'regenerator-runtime/runtime';
+import EditProfile from "./routes/EditProfile";
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/generate' element={<Generate />} />
       <Route path='/notes' element={<NotesPage />} /> 
+      <Route path="/editp" element={<EditProfile />} />
+
+      
     </Routes>
     </>
   );

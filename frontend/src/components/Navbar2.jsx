@@ -27,8 +27,9 @@ const profileMenuItems = [
     icon: UserCircleIcon,
   },
   {
-    label: "Edit Profile",
+    label: <Link to="/editp">Editar Perfil</Link>,
     icon: Cog6ToothIcon,
+    to: "/editp",
   },
   {
     label: "Sign Out",
@@ -219,7 +220,7 @@ export default function Navbar2() {
           href="/#team"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          HearingAId
+          <Link to="/#team"><a target='_blank'><img src='https://i.postimg.cc/YvTsPF2g/Hearing-AId-mini-logo.png' border='0' class="w-40 h-auto" alt='Hearing-AId-mini-logo'/></a></Link> 
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         
