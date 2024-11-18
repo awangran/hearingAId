@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Navbar2 from '../components/Navbar2'
 import NoteCard from '../components/NoteCard';
 import { Button, ButtonGroup, IconButton } from "@material-tailwind/react";
-import {PlusIcon} from "@heroicons/react/24/solid";
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useUser } from "../../UserContext";
+import { useItem } from '../../ItemContext'; 
+
 import axios from 'axios';
 
 // Lista de materias de ejemplo
@@ -21,6 +22,11 @@ function Dashboard() {
     const { userId } = useUser();
     const [clases, setClases] = useState([]);
 
+    const { setItem } = useItem();
+    const handleClick = (item) => {
+      setItem(item); 
+    };
+
     useEffect(() => {
       const fetchClases = async () => { 
         try {
@@ -28,7 +34,6 @@ function Dashboard() {
           const response = await axios.get(`http://localhost:5555/generate/${userId}`);
           
           setClases(response.data.notes); 
-          console.log(clases)
         } catch (error) {
           console.error('Error fetching clases:', error.response ? error.response.data : error.message);
           alert('Failed to fetch clases, please try again.');
@@ -70,13 +75,16 @@ function Dashboard() {
       
       <div className="flex flex-wrap justify-center">
         {clases.map((item) => (
-          <NoteCard
-            key={item.id}
-            subject={item.titulo}
-            description={item.clase}
-            date={item.fecha}
-            //onClick={index === 0 ? () => window.location.href = '/notes' : undefined} // Redirige solo la primera tarjeta
-          />
+          <div key={item.id} onClick={() => handleClick(item)}
+          >
+            <Link to='/notes'>
+            <NoteCard
+              subject={item.titulo}
+              description={item.clase}
+              date={item.fecha} 
+            />
+          </Link>
+          </div>
         ))}
       </div> 
     </>

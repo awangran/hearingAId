@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import Navbar2 from '../components/Navbar2';
 import axios from 'axios';
+import { useItem } from '../../ItemContext'; 
+
+
 
 function NotesPage() {
+  //pasar info de la nota
+  const { item } = useItem();
+  if (!item) {
+    return <p>No se ha seleccionado ninguna nota.</p>;
+  }
+
   // Los apuntes que se mostrarán en la mitad izquierda de la pantalla
-  const latestNotes = `Estos son los últimos apuntes de ISIS1001: Introducción a la Ingeniería de Sistemas. Aquí se analizan los usos de la Inteligencia Artificial en la Ingeniería.`;
+  const latestNotes = item.contenido;
   
   const [question, setQuestion] = useState(''); // Estado para la pregunta del usuario
   const [answer, setAnswer] = useState(''); // Estado para la respuesta generada por la API
@@ -43,14 +52,19 @@ function NotesPage() {
     }
   };
 
+  
+
+
   return (
     <>
       <Navbar2 />
       <div className="flex mx-16 my-12 h-screen">
         {/* Mitad Izquierda - Apuntes */}
         <div className="w-1/2 pr-8 overflow-y-auto bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h2 className="text-gray-700 font-semibold mb-4">Apuntes Recientes</h2>
-          <p className="text-gray-700 whitespace-pre-wrap">{latestNotes}</p>
+          <h1 className="text-gray-900 font-semibold mb-4">Apuntes de {item.titulo}</h1>
+          <h2 className="text-gray-700 font-semibold mb-4">Clase: {item.clase}</h2>
+          <h2 className="text-gray-700 font-semibold mb-4">Fecha: {item.fecha}</h2>
+          <p className="text-gray-700 whitespace-pre-wrap">{item.contenido}</p>
         </div>
 
         {/* Mitad Derecha - Preguntas y Respuestas */}

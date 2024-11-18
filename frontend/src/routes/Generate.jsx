@@ -55,11 +55,10 @@ function Generate() {
   useEffect(() => {
     const fetchClases = async () => {
       try {
-        // Fetch the object by ID
+        
         const response = await axios.get(`http://localhost:5555/generate/${userId}`);
         
-        // Assuming `response.data` contains the full object
-        setClases(response.data.clases); // Extract and set the `clases` array
+        setClases(response.data.clases); 
       } catch (error) {
         console.error('Error fetching clases:', error.response ? error.response.data : error.message);
         alert('Failed to fetch clases, please try again.');
@@ -88,6 +87,7 @@ function Generate() {
 
     axios.post('http://localhost:5555/nuevanota',{userId,id,titulo,clase,contenido,fecha})
     .then(res => {console.log(res)
+      alert('¡Nota guardada!');
     })
     .catch(err => console.log(err))
   }
