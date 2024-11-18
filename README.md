@@ -46,7 +46,8 @@
 ## Sobre el proyecto
 
 <a href="https://ibb.co/VtgsPQk"><img src="https://i.ibb.co/Dt9ZS8j/landing.png" alt="landing" border="0"></a>
-Un cuaderno virtual dirigido a personas con limitaciones auditivas que dependen de un interprete para su participación y entendimiento en ambientes educativos. El cuaderno muestra subtitulos en tiempo real de la clase, permite realizar preguntas, y utiliza inteligencia artificial para generar resumenes de la clase
+<br>
+HearingAId es cuaderno virtual dirigido a personas con limitaciones auditivas que dependen de un interprete para su participación y entendimiento en ambientes educativos. El cuaderno muestra subtitulos en tiempo real de la clase, permite realizar preguntas, y utiliza inteligencia artificial para generar resumenes de la clase
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
