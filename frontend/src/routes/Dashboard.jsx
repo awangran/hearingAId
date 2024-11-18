@@ -6,6 +6,7 @@ import {PlusIcon} from "@heroicons/react/24/solid";
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useUser } from "../../UserContext";
+import axios from 'axios';
 
 // Lista de materias de ejemplo
 /* const subjects = [
@@ -17,27 +18,27 @@ import { useUser } from "../../UserContext";
 ]; */
 
 function Dashboard() {
-    const location = useLocation();
     const { userId } = useUser();
-    const [userData, setUserData] = useState(null);
+    const [clases, setClases] = useState([]);
 
-    /* useEffect(() => {
-      if (userId) {
-          // Fetch user daya del db segun id
-          axios.get('http://localhost:5555/login',{userId})
-              .then(response => {
-                  setUserData(response.data); // guardar data en el state
-              })
-              .catch(error => {
-                  console.error("Error fetching user data:", error);
-              });
-      }
-  }, [userId]);
-
-  if (!userId) {
-      return <p>Error: No user ID found. Please log in again.</p>;
-  } */
-
+    useEffect(() => {
+      const fetchClases = async () => { 
+        try {
+          
+          const response = await axios.get(`http://localhost:5555/generate/${userId}`);
+          
+          setClases(response.data.notes); 
+          console.log(clases)
+        } catch (error) {
+          console.error('Error fetching clases:', error.response ? error.response.data : error.message);
+          alert('Failed to fetch clases, please try again.');
+        }
+      };
+  
+      fetchClases();
+    }, [userId]);
+    
+    
   return (
     <>
     <Navbar2 />
@@ -61,22 +62,23 @@ function Dashboard() {
       </div>      
 
       <ButtonGroup fullWidth>
-        <Button onClick>Cards</Button>
+        <Button >Cards</Button>
         <Button>Tabla</Button>
         <Button>Clases</Button>
       </ButtonGroup>
 
-      {/* <div className="flex flex-wrap justify-center">
-        {userData.map((item, index) => (
+      
+      <div className="flex flex-wrap justify-center">
+        {clases.map((item) => (
           <NoteCard
-            key={index}
-            subject={item.subject}
-            description={item.description}
-            date={item.date}
-            onClick={index === 0 ? () => window.location.href = '/notes' : undefined} // Redirige solo la primera tarjeta
+            key={item.id}
+            subject={item.titulo}
+            description={item.clase}
+            date={item.fecha}
+            //onClick={index === 0 ? () => window.location.href = '/notes' : undefined} // Redirige solo la primera tarjeta
           />
         ))}
-      </div> */}
+      </div> 
     </>
   )
 }
