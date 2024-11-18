@@ -5,6 +5,8 @@ import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import NavbarComp from "../components/NavbarComp";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useUser } from "../../UserContext";
+
 
 export function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -12,17 +14,18 @@ export function Login() {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const [sessionID, setSessionID] = useState()
   const navigate = useNavigate()
+  const { setUserId } = useUser();
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:5555/login',{email,password})
     .then(res => {
       console.log(res)
-      if(res.data === "Success") {
+      if(res.data.message === "Success") {
         setUserId(res.data.userId);
-        navigate('/dashboard', { state: { userId } })
+        navigate('/dashboard')
       }
     })
     .catch(err => console.log(err))

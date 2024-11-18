@@ -1,15 +1,12 @@
 import React from 'react'
-import NavbarComp from '../components/NavbarComp'
-import TeamCard from '../components/TeamCard'
-import Footer from '../components/Footer'
-
-import { useState } from 'react'
-import { PlusIcon } from '@heroicons/react/24/solid'
 import Navbar2 from '../components/Navbar2'
+import { useUser } from "../../UserContext";
 
 
 
 function EditProfile() {
+    const { userId } = useUser();
+
     return (
         <div className="bg-white min-h-screen">
           {/* Importar NavBar */}

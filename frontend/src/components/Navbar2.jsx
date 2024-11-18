@@ -23,7 +23,7 @@ import {
 // profile menu component
 const profileMenuItems = [
   {
-    label: "My Profile",
+    label:  <Link to="/editp">My Profile</Link>,
     icon: UserCircleIcon,
   },
   {
@@ -32,7 +32,7 @@ const profileMenuItems = [
     to: "/editp",
   },
   {
-    label: "Sign Out",
+    label: <Link to="/">Sign Out</Link>,
     icon: PowerIcon,
   },
 ];
@@ -53,9 +53,9 @@ function ProfileMenu() {
           <Avatar
             variant="circular"
             size="sm"
-            alt="tania andrew"
+            alt="gato"
             className="border border-gray-900 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            src="https://i.ibb.co/gg388F4/gato.jpg"
           />
           <ChevronDownIcon
             strokeWidth={2.5}
@@ -217,10 +217,10 @@ export default function Navbar2() {
         
         <Typography
           as="a"
-          href="/#team"
+          href="/"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          <Link to="/#team"><a target='_blank'><img src='https://i.postimg.cc/YvTsPF2g/Hearing-AId-mini-logo.png' border='0' class="w-40 h-auto" alt='Hearing-AId-mini-logo'/></a></Link> 
+          <Link to="/"><a target='_blank'><img src='https://i.postimg.cc/YvTsPF2g/Hearing-AId-mini-logo.png' border='0' className="w-40 h-auto" alt='Hearing-AId-mini-logo'/></a></Link> 
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         

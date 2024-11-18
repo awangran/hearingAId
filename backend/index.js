@@ -20,13 +20,14 @@ mongoose
     .catch((err) => {
         console.log(err)
     })
-
+//para crear cuenta
 app.post('/signup', (req,res) => {
     UsuarioModel.create(req.body)
     .then(usuarios => res.json(usuarios))
     .catch(err => res.json(err))
 })
 
+//para login
 app.post('/login', (req,res) => {
     const {email, password} = req.body;
     UsuarioModel.findOne({email:email})
@@ -35,8 +36,8 @@ app.post('/login', (req,res) => {
             if(user.password === password) {
                 res.json({
                     message: "Success",
-                    userId: user._id 
-                });
+                    userId: user._id
+                });;
             } else {
                 res.json("contraseña incorrecta")
             }
@@ -46,3 +47,51 @@ app.post('/login', (req,res) => {
     })
 })
 
+//para get nombre de clases de un id
+app.get('/generate/:id', async (req, res) => {
+    try {
+      const item = await UsuarioModel.findById(req.params.id);
+      if (!item) return res.status(404).send('Item not found');
+      res.json(item); 
+    } catch (error) {
+      res.status(500).send('Server error');
+    }
+  });
+  
+//para agregar notas a un id
+app.post('/nuevanota', async (req, res) => {
+    const { userId, id, titulo, clase, contenido } = req.body;
+  
+    try {
+        const user = await UsuarioModel.findById(userId);
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      const newNote = { id, titulo, clase, contenido };
+      user.notes.push(newNote);
+      await user.save();
+  
+      res.status(200).json({ message: 'Note added successfully', notes: user.notes });
+    } catch (error) {
+      console.error('Error adding note:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+
+//para fetch las notas de un usuario
+app.get('/dashboard/:userId/notes', async (req, res) => {
+    try {
+      const userId = req.params.userId;  
+  
+      const user = await UsuarioModel.findById(userId);
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      res.json(user);  
+    } catch (error) {
+      console.error('Error fetching notes:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
