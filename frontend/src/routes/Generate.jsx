@@ -5,6 +5,9 @@ import { Button } from '@material-tailwind/react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Pregunta from '../components/Pregunta';
 import { summarize } from '@ebereplenty/summarize';
+import { useUser } from "../../UserContext";
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function Generate() {
   const {
@@ -44,6 +47,29 @@ function Generate() {
 
   const subs = transcript.split(' ').slice(-15).join(' ');
 
+  //hook para fetch las clases del usuario
+  const { userId } = useUser();
+  const [clases, setClases] = useState([]);
+
+  useEffect(() => {
+    const fetchClases = async () => {
+      try {
+        // Fetch the object by ID
+        const response = await axios.get(`http://localhost:5555/generate/${userId}`);
+        
+        // Assuming `response.data` contains the full object
+        setClases(response.data.clases); // Extract and set the `clases` array
+      } catch (error) {
+        console.error('Error fetching clases:', error.response ? error.response.data : error.message);
+        alert('Failed to fetch clases, please try again.');
+      }
+    };
+
+    fetchClases();
+  }, [userId]);
+
+ 
+
   return (
     <>
       <Navbar2 />
@@ -52,8 +78,14 @@ function Generate() {
           Generar
         </p>
         <p className="mt-6 text-lg/8 text-gray-600">
-          Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+          Empieza tu grabacion para hacer un resumen y elige una clase. 
         </p>
+        <p className='mt-2 text-gray-600' >User Id: {userId} </p>
+
+        {/* Elegir la clase get las clases de la db */}
+        <p>{clases.map((clase, index) => (
+          <li key={index}>{clases}</li>
+        ))}</p>
       </div>
 
       <div className="mx-16 bg-gray-200 p-12 rounded-lg h-64 text-center">

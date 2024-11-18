@@ -14,11 +14,20 @@ export function Login() {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [clases, setClases] = useState()
 
+  
   const navigate = useNavigate()
+
+  const handleClases = (e) => {
+    const input = e.target.value;
+    const arrayValues = input.split(','); 
+    setClases(arrayValues);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5555/signup',{name,email,password})
+    axios.post('http://localhost:5555/signup',{name,email,password,clases})
     .then(res => {console.log(res)
     navigate('/login')
     })
@@ -110,6 +119,28 @@ export function Login() {
                 </i>
               }
               onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="name">
+              <Typography
+                variant="small"
+                className="mb-2 block font-medium text-gray-900"
+              >
+                Clases (separadas por una coma)
+              </Typography>
+            </label>
+            <Input
+              id="name"
+              color="gray"
+              size="lg"
+              name="name"
+              placeholder=""
+              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+              labelProps={{
+                className: "hidden",
+              }}
+              onChange={handleClases}
             />
           </div>
           <Button color="gray" type="submit" size="lg" className="mt-6" fullWidth>

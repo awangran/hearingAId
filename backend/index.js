@@ -20,13 +20,14 @@ mongoose
     .catch((err) => {
         console.log(err)
     })
-
+//para crear cuenta
 app.post('/signup', (req,res) => {
     UsuarioModel.create(req.body)
     .then(usuarios => res.json(usuarios))
     .catch(err => res.json(err))
 })
 
+//para login
 app.post('/login', (req,res) => {
     const {email, password} = req.body;
     UsuarioModel.findOne({email:email})
@@ -35,8 +36,8 @@ app.post('/login', (req,res) => {
             if(user.password === password) {
                 res.json({
                     message: "Success",
-                    userId: user._id 
-                });
+                    userId: user._id
+                });;
             } else {
                 res.json("contraseña incorrecta")
             }
@@ -46,3 +47,14 @@ app.post('/login', (req,res) => {
     })
 })
 
+//para get nombre de clases de un id
+app.get('/generate/:id', async (req, res) => {
+    try {
+      const item = await UsuarioModel.findById(req.params.id);
+      if (!item) return res.status(404).send('Item not found');
+      res.json(item); 
+    } catch (error) {
+      res.status(500).send('Server error');
+    }
+  });
+  
