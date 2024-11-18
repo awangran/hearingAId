@@ -60,7 +60,7 @@ app.get('/generate/:id', async (req, res) => {
   
 //para agregar notas a un id
 app.post('/nuevanota', async (req, res) => {
-    const { userId, id, titulo, clase, contenido, fecha } = req.body;
+    const { userId, id, titulo, clase, contenido } = req.body;
   
     try {
         const user = await UsuarioModel.findById(userId);
@@ -68,7 +68,7 @@ app.post('/nuevanota', async (req, res) => {
         return res.status(404).json({ message: 'User not found' });
       }
   
-      const newNote = { id, titulo, clase, contenido, fecha };
+      const newNote = { id, titulo, clase, contenido };
       user.notes.push(newNote);
       await user.save();
   

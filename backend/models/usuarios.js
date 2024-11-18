@@ -12,7 +12,6 @@ const UsuarioSchema = new mongoose.Schema({
     email: String,
     password: String,
     clases: Array,
-    fecha: Date,
     notes: [NotaSchema],
 })
 

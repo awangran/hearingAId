@@ -83,9 +83,8 @@ function Generate() {
     const clase = selectedClase;
     const contenido = summary;
     const titulo = tituloinput;
-    const fecha = new Date();
 
-    axios.post('http://localhost:5555/nuevanota',{userId,id,titulo,clase,contenido,fecha})
+    axios.post('http://localhost:5555/nuevanota',{userId,id,titulo,clase,contenido})
     .then(res => {console.log(res)
       alert('¡Nota guardada!');
     })

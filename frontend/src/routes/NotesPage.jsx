@@ -63,7 +63,6 @@ function NotesPage() {
         <div className="w-1/2 pr-8 overflow-y-auto bg-gray-100 p-6 rounded-lg shadow-lg">
           <h1 className="text-gray-900 font-semibold mb-4">Apuntes de {item.titulo}</h1>
           <h2 className="text-gray-700 font-semibold mb-4">Clase: {item.clase}</h2>
-          <h2 className="text-gray-700 font-semibold mb-4">Fecha: {item.fecha}</h2>
           <p className="text-gray-700 whitespace-pre-wrap">{item.contenido}</p>
         </div>
 

@@ -66,11 +66,6 @@ function Dashboard() {
           </div>
       </div>      
 
-      <ButtonGroup fullWidth>
-        <Button >Cards</Button>
-        <Button>Tabla</Button>
-        <Button>Clases</Button>
-      </ButtonGroup>
 
       
       <div className="flex flex-wrap justify-center">
