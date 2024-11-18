@@ -68,6 +68,11 @@ function Generate() {
     fetchClases();
   }, [userId]);
 
+  //variable para la clase seleccionada para generar la nota
+  const [selectedClase, setSelectedClase] = useState('');
+  const handleSelectChange = (e) => {
+    setSelectedClase(e.target.value);
+  };
  
 
   return (
@@ -83,9 +88,28 @@ function Generate() {
         <p className='mt-2 text-gray-600' >User Id: {userId} </p>
 
         {/* Elegir la clase get las clases de la db */}
-        <p>{clases.map((clase, index) => (
-          <li key={index}>{clases}</li>
-        ))}</p>
+        <div>
+          <p className='mt-6 text-gray-600'>Selecciona una clase para crear tu nota</p>
+          <select
+            value={selectedClase}
+            onChange={handleSelectChange}
+            className="mt-2 p-2 text-gray-600 border rounded"
+          >
+            <option value="" disabled>
+              Clase
+            </option>
+            {clases.map((clase, index) => (
+              <option key={index} value={clase}>
+                {clase}
+              </option>
+            ))}
+          </select>
+          {selectedClase && (
+            <p className="mt-4 text-gray-600">
+              Clase: <strong>{selectedClase}</strong>
+            </p>
+          )}
+        </div>
       </div>
 
       <div className="mx-16 bg-gray-200 p-12 rounded-lg h-64 text-center">
