@@ -1,12 +1,13 @@
 import 'regenerator-runtime/runtime';
 import React, { useState } from 'react';
 import Navbar2 from '../components/Navbar2';
-import { Button } from '@material-tailwind/react';
+import { Button, Input, Typography } from '@material-tailwind/react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Pregunta from '../components/Pregunta';
 import { summarize } from '@ebereplenty/summarize';
 import { useUser } from "../../UserContext";
 import { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 function Generate() {
@@ -73,7 +74,24 @@ function Generate() {
   const handleSelectChange = (e) => {
     setSelectedClase(e.target.value);
   };
- 
+
+  //funcion para guardar nota
+
+  const[tituloinput, setTitulo] = useState('')
+
+  const guardarNota = async () => {
+    const id = uuidv4();
+    const clase = selectedClase;
+    const contenido = summary;
+    const titulo = tituloinput;
+    const fecha = new Date();
+
+    axios.post('http://localhost:5555/nuevanota',{userId,id,titulo,clase,contenido,fecha})
+    .then(res => {console.log(res)
+    })
+    .catch(err => console.log(err))
+  }
+
 
   return (
     <>
@@ -109,6 +127,25 @@ function Generate() {
               Clase: <strong>{selectedClase}</strong>
             </p>
           )}
+          <label htmlFor="name">
+              <p
+                className="mt-4 text-gray-600"
+              >
+                Título de nota: 
+              </p>
+            </label>
+            <Input
+              id="name"
+              color="gray"
+              size="lg"
+              name="name"
+              placeholder=""
+              className="w-full placeholder:opacity-100"
+              labelProps={{
+                className: "hidden",
+              }}
+              onChange={(e) => setTitulo(e.target.value)}
+            />
         </div>
       </div>
 
@@ -132,13 +169,14 @@ function Generate() {
       )}
 
       {summary && ( // Muestra el resumen si existe
-        <div className="mx-16 bg-gray-100 p-6 rounded-lg text-center mt-8">
+        <div className="mx-16 my-16 bg-gray-100 p-6 rounded-lg text-center mt-8">
           <p className="text-pretty text-2xl font-semibold tracking-tight text-gray-700 sm:text-3xl">
-            Resumen de los Apuntes
+            Resumen de la clase
           </p>
           <p className="mt-4 text-lg text-gray-600">
             {summary}
           </p>
+          <Button variant="outlined" className='mt-2' onClick={guardarNota}>Guardar Nota</Button>
         </div>
       )}
 
